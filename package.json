@@ -2,7 +2,7 @@
   "name": "klink-demo-spa",
   "version": "1.0.0",
   "description": "Demo application for Klink modules and components",
-  "main": "index.js",
+  "main": "single-spa-config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --open",
@@ -54,6 +54,8 @@
     "css-loader": "^1.0.0",
     "html-loader": "^0.5.5",
     "style-loader": "^0.23.1",
+    "vue-loader": "^15.4.2",
+    "vue-template-compiler": "^2.5.17",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.9"
