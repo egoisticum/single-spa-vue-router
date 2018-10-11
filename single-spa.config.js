@@ -12,6 +12,7 @@ singleSpa.start();
 
 function pathPrefix(prefix) {
     return function(location) {
-        return location.pathname.startsWith(`${prefix}`);
+        return location.pathname.indexOf(`${prefix}`) === 0;
     }
 }
+

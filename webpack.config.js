@@ -1,6 +1,5 @@
-// webpack.config.js
-const path = require('path');
 const webpack = require('webpack');
+const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader')
 
@@ -9,7 +8,8 @@ module.exports = {
     entry: {
       // Set the single-spa config as the project entry point
         'single-spa.config': 'single-spa.config.js',
-    },
+    }
+    ,
     output: {
         publicPath: '/dist/',
         filename: '[name].js',
@@ -54,13 +54,15 @@ module.exports = {
         ],
     },
     plugins: [
-      // A webpack plugin to remove/clean the build folder(s) before building
-        new CleanWebpackPlugin(['dist']),
+        // new CleanWebpackPlugin(['dist']),
         new VueLoaderPlugin()
     ],
     devtool: 'source-map',
     externals: [],
     devServer: {
+        port: 8080,
+        publicPath: '/dist/',
+        contentBase: './',
         historyApiFallback: true
     }
 };
