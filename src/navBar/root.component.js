@@ -9,7 +9,6 @@ const NavBar = () => (
         <li><a href="/" onClick={navigateToUrl}>Home</a></li>
         <li><a href="/angularJS" onClick={navigateToUrl}>AngularJS</a></li>
         <li><a href="/vue" onClick={navigateToUrl}>Vue</a></li>
-        <li><a href="/vue2" onClick={navigateToUrl}>Vue2</a></li>
       </ul>
     </div>
   </nav>

@@ -22,9 +22,9 @@ import About from './components/About.vue'
 //define your routes
 const routes = [
 //define the root url of the application.
-{ path: '/', component: Hello },
+{ path: '/vue2/', component: Hello },
 //route for the about route of the web page
-{ path: '/about', component: About }
+{ path: '/vue2/about', component: About }
 ]
 
 // Create the router instance and pass the `routes` option
@@ -34,30 +34,6 @@ const router = new VueRouter({
   routes, // short for routes: routes
   mode: 'history'
 })
-//instatinat the vue instance
-// new Vue({
-// //define the selector for the root component
-//   el: '#app',
-//   //pass the template to the root component
-//   template: '<App/>',
-//   //declare components that the root component can access
-//   components: { App },
-//   render: h => h(App),
-//   //pass in the router to the Vue instance
-//   router
-// }).$mount('#app')//mount the router on the app
-
-// window.onload = function () {
-//   if(document.getElementById("#app")){
-//   var main = new Vue({
-//       el: '#app',
-//       template: '<App/>',
-//       components: { App },
-//       render: h => h(App),
-//       router
-//     });
-//   }
-// }
 
 const vueLifecycles = singleSpaVue({
   Vue,
