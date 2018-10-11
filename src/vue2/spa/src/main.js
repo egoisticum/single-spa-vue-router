@@ -1,7 +1,10 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 //import the vue instance
-import Vue from 'vue'
+
+import Vue from 'vue/dist/vue.min.js'
+import singleSpaVue from 'single-spa-vue';
+
 //import the App component
 // var App = require('./App.vue');
 import App from './App.vue'
@@ -44,13 +47,40 @@ const router = new VueRouter({
 //   router
 // }).$mount('#app')//mount the router on the app
 
-window.onload = function () {
-  var main = new Vue({
-      el: '#app',
-      template: '<App/>',
-      components: { App },
-      render: h => h(App),
-      router
+// window.onload = function () {
+//   if(document.getElementById("#app")){
+//   var main = new Vue({
+//       el: '#app',
+//       template: '<App/>',
+//       components: { App },
+//       render: h => h(App),
+//       router
+//     });
+//   }
+// }
 
-  });
-}
+const vueLifecycles = singleSpaVue({
+  Vue,
+  App,
+  appOptions: {
+    el: '#app',
+    template: '<App/>',
+    components: { App },
+    render: h => h(App),
+    router
+  }  
+});
+
+export const bootstrap = [
+  vueLifecycles.bootstrap,
+];
+
+export const mount = [
+  vueLifecycles.mount,
+];
+
+export const unmount = [
+  vueLifecycles.unmount,
+];
+
+
