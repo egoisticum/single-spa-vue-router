@@ -2,6 +2,13 @@ const webpack = require('webpack');
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader')
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+ 
+const extractSass = new ExtractTextPlugin({
+    filename: "[name].[md5:contenthash:hex:20].css",
+    disable: process.env.NODE_ENV === "development"
+});
+ 
 
 module.exports = {
     mode: 'development',
@@ -22,6 +29,18 @@ module.exports = {
             test: /\.css$/,
             use: ['style-loader', 'css-loader']
           },
+          { 
+            test: /\.scss$/,
+            use: extractSass.extract({
+                use: [{
+                    loader: "css-loader"
+                }, {
+                    loader: "sass-loader"
+                }],
+                // use style-loader in development 
+                fallback: "style-loader"
+            })
+        },
           {
             test: /\.js$/,
             exclude: [path.resolve(__dirname, 'node_modules')],
@@ -32,6 +51,11 @@ module.exports = {
             test: /\.html$/,
             exclude: /node_modules/,
             loader: 'html-loader',
+        },
+        {
+            test: /\.png$/, 
+            exclude: /node_modules/,
+            loader: 'file-loader?name=images/[name].[ext]'
         },
         {
             test: /\.vue$/,
@@ -55,7 +79,8 @@ module.exports = {
     },
     plugins: [
         // new CleanWebpackPlugin(['dist']),
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        extractSass
     ],
     devtool: 'source-map',
     externals: [],

@@ -1,9 +1,10 @@
 <template>
   <div id="app">
-    
     <!-- <img src="./assets/logo.png"> -->
     <router-link v-bind:to="'/vue/'">Home</router-link>
     <router-link v-bind:to="'/vue/about'">About</router-link>
+    <router-link v-bind:to="'/vue/devices'">Devices</router-link>
+    <router-link v-bind:to="'/vue/assets'">Assets</router-link>
     <router-view/>
   </div>
 </template>

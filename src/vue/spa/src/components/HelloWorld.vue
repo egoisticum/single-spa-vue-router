@@ -9,7 +9,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Klink-Demo SPA Vue.js App'
+      msg: 'Welcome to Your Klink-Demo SPA Vue.js App!'
     }
   }
 }
