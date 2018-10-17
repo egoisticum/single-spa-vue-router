@@ -35,6 +35,7 @@
     "single-spa-angularjs": "^3.0.1",
     "single-spa-react": "^2.8.1",
     "single-spa-vue": "^1.2.0",
+    "systemjs": "^2.0.2",
     "vue": "^2.5.17"
   },
   "devDependencies": {

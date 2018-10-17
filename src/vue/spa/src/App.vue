@@ -3,6 +3,7 @@
     <router-link :to="'/vue'"><img src="./assets/logo.png"></router-link>
     <router-link :to="'/vue'">Home</router-link>
     <router-link :to="'/vue/about'">About</router-link>
+    <a href="/vue/devices">Devices 2</a>
     <router-link :to="'/vue/devices'">Devices</router-link>
     <router-link :to="'/vue/assets'">Assets</router-link>
     <router-view/>

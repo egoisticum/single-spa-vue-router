@@ -9,6 +9,8 @@ const NavBar = () => (
         <li><a href="/" onClick={navigateToUrl}>Home</a></li>
         <li><a href="/angularJS" onClick={navigateToUrl}>AngularJS</a></li>
         <li><a href="/vue" onClick={navigateToUrl}>Vue</a></li>
+        {/* <li><a href="/vueURL" onClick={navigateToUrl}>VueURL</a></li> */}
+
       </ul>
     </div>
   </nav>

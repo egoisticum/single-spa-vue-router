@@ -1,7 +1,7 @@
 // The Vue build version to load with the `import` command
 
 //import the vue instance
-import Vue from 'vue/dist/vue.min.js'
+import Vue from 'vue';
 import singleSpaVue from 'single-spa-vue';
 
 //import the App component
@@ -10,6 +10,7 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 //tell vue to use the router
 Vue.use(VueRouter)
+
 //import the components
 import Hello from './components/HelloWorld.vue'
 import About from './components/About.vue'
@@ -118,31 +119,41 @@ const router = new VueRouter({
   routes, // short for routes: routes
   mode: 'history',
   base: __dirname,
-  routes
 })
+
 
 // Export router globally
 window.router = router;
 
-const vueLifecycles = singleSpaVue({
+const vm  = singleSpaVue({
   Vue,
   appOptions: {
     el: '#app',
-    template: '<App/>',
-    components: { App },
+    router,
     render: h => h(App),
-    router
+    components: { App }
   }
 });
+window.vm = vm;
+
+// Uncomment the code below if you are editing only Vue app 
+
+// var vm = new Vue({
+//   el: '#app',
+//   router,
+//   render: h => h(App),
+//   components: { App },
+// });
+// window.vm = vm;
 
 export const bootstrap = [
-  vueLifecycles.bootstrap,
+  vm.bootstrap,
 ];
 
 export const mount = [
-  vueLifecycles.mount,
+  vm.mount,
 ];
 
 export const unmount = [
-  vueLifecycles.unmount,
+  vm.unmount,
 ];

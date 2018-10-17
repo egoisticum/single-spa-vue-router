@@ -2,27 +2,27 @@
 // import Router from 'vue-router'
 // import HelloWorld from '@/components/HelloWorld'
 // import About from '@/components/About'
-//
+
 // // Devices
-//
+
 // import Devices from '@/components/devices/Devices'
 // import DevicesMain from '@/components/devices/DevicesMain'
 // import Device from '@/components/devices/Device'
 // import DeviceCreate from '@/components/devices/DeviceCreate'
 // import DeviceEdit from '@/components/devices/DeviceEdit'
 // import DeviceSensor from '@/components/devices/DeviceSensor'
-//
+
 // // Assets
-//
+
 // import Assets from '@/components/assets/Assets';
 // import AssetsMain from '@/components/assets/AssetsMain';
 // import Asset from '@/components/assets/Asset';
 // import AssetCreate from '@/components/assets/AssetCreate';
 // import AssetEdit from '@/components/assets/AssetEdit';
 // import AssetLinkDevice from '@/components/assets/AssetLinkDevice';
-//
+
 // Vue.use(Router)
-//
+
 // export default new Router({
 //   routes: [
 //     {
