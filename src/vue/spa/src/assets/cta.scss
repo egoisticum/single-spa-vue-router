@@ -1,0 +1,43 @@
+.cta-wrapper {
+    top: -40px;
+    font-style: normal;
+    font-stretch: normal;
+    letter-spacing: normal;
+    text-align: left;
+
+    .title {
+        // font-family: 'Titillium Web', sans-serif;
+        font-size: 25px;
+        font-weight: bold;
+        line-height: 1.52;
+        color: #fff;
+    }
+
+    .subtitle {
+        font-size: 28px !important;
+        font-weight: bold;
+        line-height: 0.5;
+        padding: 10px 0;
+    }
+
+    .description {
+        // font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 1.25;
+    }
+}
+
+.klink-options {
+    background-color: #fff;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    flex-flow: column;
+    text-align: left !important;
+    z-index: 1500;
+
+    .btn {
+        width: auto;
+        border-radius: 0;
+        padding: 10px 3em;
+    }
+}

@@ -1,0 +1,79 @@
+.main-header {
+    width: 100%;
+    box-shadow: $shadow;
+    background: $klink-header;
+    max-height: 156px !important;
+    padding-bottom: 66px;
+    position: static !important;
+
+    .klink-logo {
+        width: 150px;
+    }
+
+    .navbar {
+        justify-content: flex-start;
+        font-size: 14px;
+
+        .header-atea {
+            width: 100px !important;
+            margin: 2.5rem !important;
+        }
+
+        .user-image {
+            border: solid 1.5px #ffffff;
+        }
+
+        .header-search {
+            background-color: #222930;
+            border-radius: 23px;
+            width: 170px;
+            height: 35px;
+            color: $white;
+            padding: 10px;
+            border: 0;
+            justify-content: flex-start;
+            margin-right: auto;
+            visibility: hidden;
+        }
+
+        .header-search::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+            color: #fff;
+            opacity: .9; /* Firefox */
+        }
+
+        .navbar-nav {
+            flex-direction: row;
+            justify-content: flex-end;
+
+            .notifications-menu, .messages-menu {
+                display: none;
+            }
+
+            .dropdown-toggle::after {
+                content: none;
+            }
+
+            .notification-label {
+                background-color: #b71a1a;
+                top: 15px !important;
+                right: 10px !important;
+                padding: 4px 3px !important;
+                border-radius: 1em !important;
+                font-size: 10px !important;
+            }
+
+            a, i {
+                color: #fff;
+
+                &:hover, &:focus {
+                    background-color: transparent;
+                    color: $klink-secondary;
+                }
+            }
+
+            i {
+                border: solid 1.5px #ffffff;
+            }
+        }
+    }
+}

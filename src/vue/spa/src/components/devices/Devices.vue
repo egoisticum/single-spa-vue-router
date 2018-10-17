@@ -1,7 +1,6 @@
 <template>
     <div class="devices custom-row">
         <div class="col-12">
-            <p>devices</p>
             <router-view></router-view>
         </div>
     </div>

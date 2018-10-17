@@ -1,6 +1,6 @@
 <template>
 
-    <div v-if="asset" class="asset-container">
+    <div class="asset-container">
         <div class="info row">
             <div class="info-options col-12 row">
                 <router-link :to="'/app/assets/'+ asset.id + '/edit'" class="col-12 col-md-6 pl-0">

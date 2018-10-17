@@ -1,5 +1,5 @@
 <template>
-    <div v-if="assets" class="row assets">
+    <div class="row assets">
         <div class="col-lg-6 col-md-6 col-sm-9 col-xs-12 cta-wrapper">
             <div style="margin-left: -15px;">
                 <cta :ctaTitle="'Assets'"
@@ -11,8 +11,8 @@
             </div>
         </div>
         <div class="custom-row">
-            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 klink-box" v-for="asset in assets">
-                <klink-card :title="asset.name"
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 klink-box" v-for="asset in assets" :key="asset.id">
+                <klink-card :title="asset.first_name + ' ' + asset.last_name"
                             :description="asset.description"
                             :cardItems="asset.sensors"
                             :cardIcon="ctaButtonHref.cardIcon"
@@ -29,11 +29,7 @@
         <router-view></router-view>
     </div>
 </template>
-<script>import Vue from 'vue';
-import KlinkCard from 'klink-visualization-vue';
-import Cta from 'klink-visualization-vue';
-Vue.use(KlinkCard, Cta);
-
+<script>
 export default {
         name: "main-assets",
         components: {},
@@ -60,15 +56,18 @@ export default {
                 }
             }
         },
-        beforeMount() {
+        mounted() {
             var self = this;
-            axios.get('/api/assets').then(function(response) {
+            axios.get('/src/vue/spa/src/assets/api/assets.json').then(function(response) {
                 if (response.data) {
+                  console.log("ima");
                     self.assets = response.data.data;
+                    console.log("ima ->", self.assets);
                 }
             }).catch(function(error) {
                 console.log(error);
             });
         }
 }</script>
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+</style>

@@ -1,0 +1,75 @@
+{
+    "page": 2,
+    "per_page": 3,
+    "total": 12,
+    "total_pages": 4,
+    "data": [
+      {
+        "id": 4,
+        "first_name": "Eve",
+        "last_name": "Holt",
+        "name": "Name 1",
+        "description": "Description 1",
+        "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg",
+        "items": [
+          {
+            "title": "Device 1",
+            "value": "Value 1"
+          },
+          {
+            "title": "Device 2",
+            "value": "Value 2"
+          },
+          {
+            "title": "Device 3",
+            "value": "Value 3"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "first_name": "Charles",
+        "last_name": "Morris",
+        "name": "Name 2",
+        "description": "Description 2",
+        "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/stephenmoon/128.jpg",
+        "items": [
+          {
+            "title": "Device 1",
+            "value": "Value 1"
+          },
+          {
+            "title": "Device 2",
+            "value": "Value 2"
+          },
+          {
+            "title": "Device 3",
+            "value": "Value 3"
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "first_name": "Tracey",
+        "last_name": "Ramos",
+        "name": "Name 3",
+        "description": "Description 3",
+        "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/bigmancho/128.jpg",
+        "items": [
+          {
+            "title": "Device 1",
+            "value": "Value 1"
+          },
+          {
+            "title": "Device 2",
+            "value": "Value 2"
+          },
+          {
+            "title": "Device 3",
+            "value": "Value 3"
+          }
+        ]
+      }
+    ]
+  }
+  

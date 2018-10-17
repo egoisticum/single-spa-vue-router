@@ -8,7 +8,7 @@
 
 <script>
     export default {
-        name: 'startups'
+        name: 'assets'
     }
 </script>
 

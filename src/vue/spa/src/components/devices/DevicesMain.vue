@@ -11,10 +11,10 @@
             </div>
         </div>
         <div class="custom-row">
-            <div class="col-12 col-sm-6 col-md-6 col-lg-3 klink-box" v-for="device in devices">
-                <klink-card :title="device.name"
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3 klink-box" v-for="device in devices" :key="device.id">
+                <klink-card :title="device.first_name + ' ' + device.last_name"
                             :description="device.description"
-                            :cardItems="device.sensors"
+                            :cardItems="device.items"
                             :cardIcon="ctaButtonHref.cardIcon"
                             iconClass="fa fa-wifi deviceIcon"
                             routeName="klink-edit-devices"
@@ -29,10 +29,7 @@
         <router-view></router-view>
     </div>
 </template>
-<script>import Vue from 'vue';
-import KlinkCard from 'klink-visualization-vue';
-import Cta from 'klink-visualization-vue';
-Vue.use(KlinkCard, Cta);
+<script>
 
 export default {
         name: "main-devices",
@@ -65,11 +62,14 @@ export default {
             axios.get('/src/vue/spa/src/assets/api/devices.json').then(function(response) {
                 if (response.data) {
                     self.devices = response.data.data;
+                    console.log("ima ->");
+                    console.log(self.devices);
                 }
             }).catch(function(error) {
                 console.log(error);
             });
         }
-}</script>
+}
+</script>
 <style lang="scss" scoped>
 </style>

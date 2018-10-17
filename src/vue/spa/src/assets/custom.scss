@@ -1,0 +1,350 @@
+//Include bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+//Roboto font
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
+//Titillium font
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+@import 'variables';
+@import 'sidebar';
+@import 'header';
+@import 'forms';
+@import 'cta';
+@import 'modal';
+
+
+* {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+html, body {
+    color: $dark-grey;
+    font-family: 'Titillium Web', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #f0f0f0 !important;
+}
+
+.dash-row {
+    position: relative;
+    z-index: 999;
+    top: -80px;
+}
+
+.klink-box{
+    padding: 0 !important;
+}
+
+a {
+    text-decoration: none;
+    color: $dark-grey;
+
+    &:hover {
+        color: $light-grey;
+        text-decoration: none;
+    }
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-start {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.flex-end {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.flex-column{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container-fluid {
+    padding: 15px;
+}
+
+.custom-row {
+    margin: 0 !important;
+    padding: 0;
+    width: 100%;
+}
+
+.margin-row {
+    margin: auto !important;
+    width: 100%;
+}
+
+.klink-row {
+    margin: 0 15px !important;
+}
+
+.right-panel {
+    flex-basis: 100%;
+    position: relative;
+    background-color: $bg-color-light;
+}
+
+aside.left-panel {
+    flex-grow: 0;
+    flex-shrink: 0;
+    transition: all .5s ease;
+
+    &.open {
+        flex-basis: 230px;
+    }
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    transition: all .15s ease-in-out;
+    border-radius: 0;
+    cursor: pointer;
+
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+
+.btn-devices, .btn-assets {
+    color: #fff;
+    width: 353px;
+}
+
+.btn-devices {
+    background-color: #2d92ce !important;
+}
+
+.btn-assets {
+    background-color: #84ab48 !important;
+    color: #fff;
+}
+
+.btn-green {
+    color: $white;
+    width: 350px;
+    background-color: $klink-green;
+    border-color: $klink-green;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $green-btn-hover;
+    }
+}
+
+.btn-blue {
+    color: $white;
+    width: 350px;
+    background-color: $klink-secondary;
+    border-color: $klink-secondary;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $klink-secondary;
+    }
+}
+
+.btn-manage {
+    position: absolute;
+    top: 15px;
+    font-weight: bold;
+}
+
+.klink-container-head {
+    color: $white;
+    background: $bg-color;
+    padding: 16px 24px;
+    border-radius: 5px 5px 0 0;
+    text-transform: uppercase;
+    z-index: -1;
+
+    a {
+        text-decoration: none;
+        color: $white;
+        font-weight: bold;
+    }
+}
+
+.klink-options {
+    justify-content: space-between;
+    padding: 15px 0;
+    text-align: center;
+    flex-flow: wrap;
+
+    > * {
+        margin-bottom: 10px;
+    }
+}
+
+.klink-devices {
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    position: absolute;
+    top: -55px;
+    flex-flow: column;
+    justify-content: left;
+    text-align: left;
+
+    > .component-title {
+        margin-left: -30px !important;
+    }
+}
+
+.component-title {
+    color: #fff;
+    font-family: 'Titillium Web', sans-serif;
+    position: relative;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 1.52;
+}
+
+.dashboard-title {
+    margin-left: -8px;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.info {
+    padding: 15px 0;
+
+    .info-options {
+        padding: 15px 0;
+        display: flex;
+
+        > * {
+            padding: 5px 0;
+        }
+
+        > * + * {
+            padding-left: 5px;
+        }
+
+        button {
+            width: 100%;
+        }
+    }
+
+    .detail {
+        padding-top: 5px;
+
+        > * {
+            padding: 0;
+        }
+
+        .detail-title {
+            font-weight: bold;
+        }
+
+        p.detail-value {
+            word-wrap: break-word;
+        }
+    }
+}
+
+.user-avatar img {
+    border-radius: 50%;
+}
+
+.user-info {
+    color: #fff;
+    display: inline-block;
+    position: relative;
+    top: 10px;
+
+    .user-full-name {
+        font-size: 16px;
+    }
+
+    .user-job-position {
+        font-size: 14px;
+        text-align: center;
+    }
+}
+
+.modal-header {
+    color: $white;
+    background: $bg-color;
+    border-radius: 5px 5px 0 0;
+    text-transform: uppercase;
+
+    .modal-title {
+        line-height: inherit;
+        font-size: 1rem;
+    }
+
+    .close {
+        color: $klink-secondary;
+        text-shadow: none;
+    }
+}
+
+.modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.modal-footer {
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.fullscreen-map {
+    height: 33.4px;
+    object-fit: contain;
+    position: relative;
+    top: -35px;
+}
+
+.dashboard-wrapper{
+    .map-expand-wrapper{
+        img[alt*="Fullscreen"]{
+            visibility: hidden;
+        }
+    }
+}
+
+
+
+/*Equal height row*/
+.row-eq-height {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.centerize-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.max-height {
+    min-height: 100%;
+}
+
+.wave, .manhole {
+    img {
+        width: 20px;
+    }
+}

@@ -1,8 +1,6 @@
 // The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 
 //import the vue instance
-
 import Vue from 'vue/dist/vue.min.js'
 import singleSpaVue from 'single-spa-vue';
 
@@ -15,13 +13,27 @@ Vue.use(VueRouter)
 //import the components
 import Hello from './components/HelloWorld.vue'
 import About from './components/About.vue'
+
+//testing importing files, should they all be included in main.js? ok yes, and how to call the packages/modules per component??!
+import KlinkCard from 'klink-visualization-vue';
+import Cta from 'klink-visualization-vue';
+Vue.use(KlinkCard, Cta);
+import '../node_modules/klink-visualization-vue/dist/bundled.css';
+
+//Device routes
 import Devices from './components/Devices/Devices.vue'
 import DevicesMain from './components/devices/DevicesMain.vue'
 import Device from './components/devices/Device.vue'
 import DeviceCreate from './components/devices/DeviceCreate.vue'
 import DeviceEdit from './components/devices/DeviceEdit.vue'
 import DeviceSensor from './components/devices/DeviceSensor.vue'
+//Asset routes
 import Assets from './components/Assets/Assets.vue'
+import AssetsMain from './components/Assets/AssetsMain.vue'
+import Asset from './components/Assets/Asset.vue'
+import AssetCreate from './components/Assets/AssetCreate.vue'
+import AssetEdit from './components/Assets/AssetEdit.vue'
+import AssetLinkDevice from './components/Assets/AssetLinkDevice.vue'
 
 //Axios
 window.axios = require('axios');
@@ -64,9 +76,39 @@ const routes = [
       name: 'device',
       component: Device
   }
-] 
+]
 },
-{ path: '/vue/assets', component: Assets }
+{ path: '/vue/assets', component: Assets, children: [
+  {
+    path: '/vue/assets',
+    component: AssetsMain,
+    children: [
+      {
+          path: '/vue/assets/create',
+          name: 'klink-add-assets',
+          component: AssetCreate,
+          props: true
+      },
+      {
+          path: '/vue/assets/edit/:id',
+          name: 'klink-edit-assets',
+          component: AssetEdit,
+          props: true
+      },
+      {
+          path: '/vue/assets/sensor/:id',
+          name: 'klink-sensor-assets',
+          component: AssetLinkDevice,
+          props: true
+      }
+    ]
+  },
+  {
+      path: '/vue/assets/:id',
+      name: 'asset',
+      component: Asset
+  }
+] }
 ]
 
 // Create the router instance and pass the `routes` option
@@ -75,19 +117,22 @@ const routes = [
 const router = new VueRouter({
   routes, // short for routes: routes
   mode: 'history',
-  base: __dirname
+  base: __dirname,
+  routes
 })
+
+// Export router globally
+window.router = router;
 
 const vueLifecycles = singleSpaVue({
   Vue,
-  App,
   appOptions: {
     el: '#app',
     template: '<App/>',
     components: { App },
     render: h => h(App),
     router
-  }  
+  }
 });
 
 export const bootstrap = [
@@ -101,5 +146,3 @@ export const mount = [
 export const unmount = [
   vueLifecycles.unmount,
 ];
-
-
