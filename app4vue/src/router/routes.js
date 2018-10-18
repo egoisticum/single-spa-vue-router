@@ -1,5 +1,4 @@
 // Views
-
 // Devices
 const Devices = resolve => { require.ensure(['../pages/devices/Devices.vue'], () => { resolve(require('../pages/devices/Devices.vue')); }); };
 const DevicesMain = resolve => { require.ensure(['../pages/devices/DevicesMain.vue'], () => { resolve(require('../pages/devices/DevicesMain.vue')); }); };

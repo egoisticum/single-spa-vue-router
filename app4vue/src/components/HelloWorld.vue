@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <p>Check out our compnents: </p>
-    <!-- <router-link :to="'/devices'">Devices</router-link> -->
+    <router-link :to="'/devices'">Devices</router-link>
     <p>
       For guide and recipes on how to configure / customize this project,<br>
       check out the

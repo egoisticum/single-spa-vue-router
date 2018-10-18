@@ -30,7 +30,10 @@
     </div>
 </template>
 <script>
-
+import Vue from 'vue';
+import Cta from 'klink-visualization-vue';
+import KlinkCard from 'klink-visualization-vue';
+Vue.use(Cta, KlinkCard);
 export default {
         name: "main-devices",
         components: {},
@@ -59,7 +62,7 @@ export default {
         },
         mounted() {
             var self = this;
-            axios.get('/src/vue/spa/src/assets/api/devices.json').then(function(response) {
+            axios.get('../../assets/api/devices.json').then(function(response) {
                 if (response.data) {
                     self.devices = response.data.data;
                     console.log("ima ->");
