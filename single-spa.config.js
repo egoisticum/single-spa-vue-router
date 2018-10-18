@@ -6,8 +6,10 @@ singleSpa.registerApplication('navBar', () => import ('./src/navBar/navBar.app.j
 singleSpa.registerApplication('home', () => import('./src/home/home.app.js'), () => location.pathname === "" || location.pathname === "/" || location.pathname.startsWith('/home'));
 singleSpa.registerApplication('angularJS', () => import ('./src/angularJS/angularJS.app.js'), pathPrefix('/angularJS'));
 // singleSpa.registerApplication('vueJS', () => import ('./src/vue/spa/src/main.js'),  pathPrefix('/vue'));
+singleSpa.declareChildApplication('vueJS', () => import ('http://localhost:4200/'),  pathPrefix('/vue'));
 
-singleSpa.registerApplication('vueJS', () => loadApp('http://localhost:4200/'), () => true)
+
+// singleSpa.registerApplication('vueJS', () => loadApp('http://localhost:4200/dist/app.js'), () => true)
 
 singleSpa.start();
 
