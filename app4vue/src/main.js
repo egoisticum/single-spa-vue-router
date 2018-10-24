@@ -2,30 +2,25 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router';
 var routes = require('./router/routes').routes;
-import '../node_modules/klink-visualization-vue/dist/bundled.css';
 
 
-//Axios
-window.axios = require('axios');
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-window.axios.defaults.headers.common['Accept'] = 'application/json';
+Vue.config.productionTip = false;
 
 // Router
 Vue.use(VueRouter);
 const router = new VueRouter({
-    routes,
-    linkActiveClass: 'open active',
-    scrollBehavior: () => ({ y: 0 }),
+    base: __dirname,
     mode: 'history',
-    base: __dirname
+    routes,
 });
 
-// // Export router globally
+// Export router globally
 window.router = router;
 
-Vue.config.productionTip = false
-
-new Vue({
+var vm = new Vue({
+  el: '#app4',
+  router,
   render: h => h(App),
-  router
-}).$mount('#app')
+  components: { App }
+});
+window.vm = vm;
