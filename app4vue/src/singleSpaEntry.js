@@ -1,14 +1,15 @@
 import Vue from 'vue'
 import singleSpaVue from 'single-spa-vue';
 import App from './App.vue'
+
 import VueRouter from 'vue-router';
 var routes = require('./router/routes').routes;
 
 // Router thingy start
 Vue.use(VueRouter);
 const router = new VueRouter({
-    base: __dirname,
-    mode: 'abstract',
+    base: "/#/app4/",
+    mode: 'history',
     routes,
 });
 
@@ -22,8 +23,7 @@ const vueLifecycles = singleSpaVue({
     appOptions: {
         el: '#app4',
         router,
-        render: h => h(App),
-        components: { App }
+        render: h => h(App)
     }
 });
 
@@ -52,3 +52,8 @@ function createDomElement() {
     }
     return el;
 }
+
+//Components importing
+import Root from './pages/Root.vue'
+import Test from './pages/Test.vue'
+import Test2 from './pages/Test2.vue'
