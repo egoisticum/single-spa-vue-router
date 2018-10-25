@@ -1,35 +1,4 @@
 // Views
-// Devices
-/*const Devices = resolve => {
-    require.ensure(["../pages/devices/Devices.vue"], () => {
-        resolve(require("../pages/devices/Devices.vue"));
-    });
-};
-const DevicesMain = resolve => {
-    require.ensure(["../pages/devices/DevicesMain.vue"], () => {
-        resolve(require("../pages/devices/DevicesMain.vue"));
-    });
-};
-const Device = resolve => {
-    require.ensure(["../pages/devices/Device.vue"], () => {
-        resolve(require("../pages/devices/Device.vue"));
-    });
-};
-const DeviceCreate = resolve => {
-    require.ensure(["../pages/devices/DeviceCreate.vue"], () => {
-        resolve(require("../pages/devices/DeviceCreate.vue"));
-    });
-};
-const DeviceEdit = resolve => {
-    require.ensure(["../pages/devices/DeviceEdit.vue"], () => {
-        resolve(require("../pages/devices/DeviceEdit.vue"));
-    });
-};
-const DeviceSensor = resolve => {
-    require.ensure(["../pages/devices/DeviceSensor.vue"], () => {
-        resolve(require("../pages/devices/DeviceSensor.vue"));
-    });
-};*/
 const Test = resolve => {
     require.ensure(["../pages/Test.vue"], () => {
         resolve(require("../pages/Test.vue"));

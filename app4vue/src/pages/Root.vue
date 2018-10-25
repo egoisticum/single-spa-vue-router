@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <p>root'</p>
+        <p>Root content</p>
     </div>
 </template>
 

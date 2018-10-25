@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <p>test 32</p>
+        <p>Some test 2 content</p>
     </div>
 </template>
 

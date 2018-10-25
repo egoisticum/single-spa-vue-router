@@ -52,18 +52,3 @@ function createDomElement() {
     }
     return el;
 }
-
-export default function register() {
-    function inheritRoute() {
-        let newRoute = window.location.hash.replace(/^#\/(app4\/?|)/, ''); // in the future get the prefix programatically
-        if (newRoute === '') newRoute = '/';
-        console.log('newroute is ', newRoute);
-        Vue.$router.push(newRoute);
-    }
-
-    inheritRoute();
-    window.onhashchange = (e) => {
-        console.log('Updating router from hashchange with e ', e, 'and hash ', window.location.hash);
-        inheritRoute();
-    };
-}
